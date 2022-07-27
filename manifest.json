@@ -1,0 +1,23 @@
+{
+   "manifest_version": 2,
+ 
+   "name": "Tag Remover",
+   "description": "Codeforces problem tag remover!",
+   "version": "3.1.2.4567",
+   "icons": {
+     "128": "icon128.png",
+     "48": "icon32.png",
+     "16": "icon16.png"
+   },
+ 
+   "browser_action": {
+     "default_icon": "icon16.png",
+     "default_popup": "popup.html"
+   }, 
+   "content_scripts": [{ 
+      "js": ["tagRemover.js"],
+      "matches": ["http://*/*", "https://*/*"],
+      "css": ["styleTagRemover.css"],
+      "text": ["abc.txt"]
+   }]
+}
