@@ -3,8 +3,13 @@ var link = window.location.toString();
 var pos = link.indexOf("https://codeforces.com/problemset/problem/");
 var pos1 = link.indexOf("https://codeforces.com/problemset");
 var pos2 = link.indexOf("https://codeforces.com/contest/");
-var pos3 = link.indexOf("https://codeforces.com/profile/");
+var Home = link.indexOf("https://codeforces.com/");
+
+if (Home != -1) {
+   document.body.style.backgroundColor = "rgb(229 229 182)";
+}
 if (pos != -1 || pos2 != -1) {
+   console.log("hello bhai")
    var sidebar = document.getElementById("sidebar").children;
    var sidebarProblemTagSec, found = false;
    for (i = 0; i < sidebar.length; i++) {
@@ -21,7 +26,6 @@ if (pos != -1 || pos2 != -1) {
    }
 
    if (found) {
-      console.log(sidebarProblemTagSec);
       // creating toogle button
       var label = document.createElement("label");
       label.classList.add("switch");
@@ -91,9 +95,3 @@ if (pos1 != -1) {
    document.getElementsByTagName('HEAD')[0].appendChild(link);
 }
 
-// // checking if the link is the profile
-// if (pos3 != -1) {
-//    const userDetails = await fetch("https://codeforces.com/api/user.status?handle=ImtiazCho&from=1&count=1000000");
-
-//    console.log(userDetails.si);
-// }
